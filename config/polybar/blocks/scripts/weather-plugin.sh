@@ -6,8 +6,8 @@
 
 APIKEY=`cat $HOME/.secrets/weather-key`
 # if you leave these empty location will be picked based on your ip-adres
-CITY_NAME=''
-COUNTRY_CODE=''
+CITY_NAME='Urussanga'
+COUNTRY_CODE='BR'
 # Desired output language
 LANG="pt"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you
@@ -43,10 +43,10 @@ COLOR_TEXT=""
 # Polybar settings ____________________________________________________________
 
 # Font for the weather icons
-WEATHER_FONT_CODE=4
+WEATHER_FONT_CODE=3
 
 # Font for the thermometer icon
-TEMP_FONT_CODE=2
+TEMP_FONT_CODE=0
 
 # Wind settings _______________________________________________________________
 

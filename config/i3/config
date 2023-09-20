@@ -37,8 +37,8 @@ exec --no-startup-id nm-applet
 
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# start a terminal (Kitty)
+bindsym $mod+Return exec kitty
 
 
 

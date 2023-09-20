@@ -2,6 +2,6 @@
 
 while :
 do
-  feh --randomize --bg-fill ~/Images/Wallpapers/*
+  feh --randomize --bg-fill ~/Pictures/Wallpapers/*
   sleep 600
 done

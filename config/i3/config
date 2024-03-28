@@ -215,6 +215,14 @@ exec_always --no-startup-id picom
 
 
 #########################################
+# Change screenlayout
+exec --no-startup-id ~/.screenlayout/dualmonitor.sh
+
+
+exec "setxkbmap -layout br,us"
+
+
+#########################################
 # Gaps
 #########################################
 gaps inner 12

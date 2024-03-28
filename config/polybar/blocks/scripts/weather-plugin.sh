@@ -6,8 +6,8 @@
 
 APIKEY=`cat $HOME/.secrets/weather-key`
 # if you leave these empty location will be picked based on your ip-adres
-CITY_NAME='Urussanga'
-COUNTRY_CODE='BR'
+#CITY_NAME='Urussanga'
+#COUNTRY_CODE='BR'
 # Desired output language
 LANG="pt"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you

@@ -178,8 +178,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-# Disable mouse acceleration for all devices
-exec_always --no-startup-id for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
@@ -193,7 +191,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previousam
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # PrintScreen
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
@@ -201,25 +199,33 @@ bindsym Shift+Print exec --no-startup-id maim | xclip -selection clipboard -t im
 bindsym $mod+Print exec --no-startup-id maim --select "$HOME/Imagens/Screenshots/$(date)"
 bindsym Shift+$mod+Print exec --no-startup-id maim "$HOME/Imagens/Screenshots/$(date)"
 
-# set wallpaper
-exec --no-startup-id ~/.config/i3/autochangewallpaper.sh
+
+
+
+#########################################
+# Startup applications
 
 # Exec Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh --blocks
 
-
-#########################################
 # Start PICOM
-#########################################
 exec_always --no-startup-id picom
 
-
-#########################################
-# Change screenlayout
+# Change screenlayout and keyboard layout
 exec --no-startup-id ~/.screenlayout/dualmonitor.sh
-
-
 exec --no-startup-id "setxkbmap -layout br,us"
+
+# Disable mouse acceleration for all devices
+exec_always --no-startup-id for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
+
+# Enable autotiling
+exec_always --no-startup-id autotiling
+
+# Set wallpaper
+exec --no-startup-id ~/.config/i3/autochangewallpaper.sh
+
+##########################################
+
 
 
 #########################################

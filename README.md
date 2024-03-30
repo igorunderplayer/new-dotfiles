@@ -1,4 +1,8 @@
 # My dotfiles
 
+Color theme: [Catppuccin](https://github.com/catppuccin/catppuccin)
 
-If the polybar theme is different from the rest of the system, change it using `style` the bar.
+Linux Distro: [ArchLinux](https://archlinux.org/)
+Window Manager: [i3](https://github.com/i3/i3)
+Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
+Status Bar: [Polybar](ttps://github.com/polybar/polybar)

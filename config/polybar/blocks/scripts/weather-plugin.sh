@@ -23,23 +23,23 @@ UNITS="metric"
 
 # Color Settings ______________________________________________________________
 
-COLOR_CLOUD="#606060"
-COLOR_THUNDER="#d3b987"
-COLOR_LIGHT_RAIN="#73cef4"
-COLOR_HEAVY_RAIN="#b3deef"
+COLOR_CLOUD="#6c7086"
+COLOR_THUNDER="#f9e2af"
+COLOR_LIGHT_RAIN="#89dceb"
+COLOR_HEAVY_RAIN="#89b4fa"
 COLOR_SNOW="#FFFFFF"
-COLOR_FOG="#606060"
-COLOR_TORNADO="#d3b987"
-COLOR_SUN="#ffc24b"
+COLOR_FOG="#313244"
+COLOR_TORNADO="#fab387"
+COLOR_SUN="#f9e2af"
 COLOR_MOON="#FFFFFF"
-COLOR_ERR="#f43753"
-COLOR_WIND="#73cef4"
-COLOR_COLD="#b3deef"
-COLOR_HOT="#f43753"
+COLOR_ERR="#f38ba8"
+COLOR_WIND="#bac2de"
+COLOR_COLD="#74c7ec"
+COLOR_HOT="#f38ba8"
 COLOR_NORMAL_TEMP="#FFFFFF"
 
 # Leave "" if you want the default polybar color
-COLOR_TEXT=""
+COLOR_TEXT="#a6adc8"
 # Polybar settings ____________________________________________________________
 
 # Font for the weather icons
@@ -291,11 +291,12 @@ function setIcons {
 	TEMP=$(echo "$TEMP" | cut -d "." -f 1)
 
 	if [ "$TEMP" -le $COLD_TEMP ]; then
-		TEMP="%{F$COLOR_COLD}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON%{T-}$COLOR_TEXT_END"
+		TEMP="%{F$COLOR_COLD}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}%{T-}$COLOR_TEXT_END"
 	elif [ $(echo "$TEMP >= $HOT_TEMP" | bc) -eq 1 ]; then
-		TEMP="%{F$COLOR_HOT}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON%{T-}$COLOR_TEXT_END"
+		TEMP="%{F$COLOR_HOT}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}%{T-}$COLOR_TEXT_END"
+
 	else
-		TEMP="%{F$COLOR_NORMAL_TEMP}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON%{T-}$COLOR_TEXT_END"
+		TEMP="%{F$COLOR_NORMAL_TEMP}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}%{T-}$COLOR_TEXT_END"
 	fi
 }
 

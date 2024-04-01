@@ -145,10 +145,16 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+
 
 # rofi
 bindsym $mod+d exec $HOME/.config/rofi/bin/launcher
+bindsym $mod+p exec $HOME/.config/rofi/bin/runner
+bindsym $mod+Shift+s exec $HOME/.config/rofi/bin/screenshot
+bindsym $mod+Shift+e exec $HOME/.config/rofi/bin/powermenu
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -206,7 +212,7 @@ bindsym Shift+Print exec --no-startup-id maim | xclip -selection clipboard -t im
 exec_always --no-startup-id ~/.config/polybar/launch.sh --blocks
 
 # Start PICOM
-exec_always --no-startup-id picom
+exec --no-startup-id picom
 
 # Change screenlayout and keyboard layout
 exec --no-startup-id ~/.screenlayout/dualmonitor.sh

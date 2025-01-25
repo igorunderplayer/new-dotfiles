@@ -41,14 +41,14 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 
-
-
 ########################
 # Lockscreen
 ########################
 
-
 bindsym $mod+Shift+x exec betterlockscreen -l dim
+
+
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -212,7 +212,7 @@ bindsym Shift+Print exec --no-startup-id maim | xclip -selection clipboard -t im
 exec_always --no-startup-id ~/.config/polybar/launch.sh --blocks
 
 # Start PICOM
-exec --no-startup-id picom
+exec_always --no-startup-id picom
 
 # Change screenlayout and keyboard layout
 exec --no-startup-id ~/.screenlayout/dualmonitor.sh
@@ -276,7 +276,4 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-
-
-
 
